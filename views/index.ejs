@@ -1,0 +1,27 @@
+<div class="author">
+    <h1 class="author__heading">Hey Am Mduduzi</h1>
+    <p class="author__body">Full Stack Developer</p>
+</div>
+
+<img src="/img/hero-img.jpg" alt="Desk Image" class="hero-img" width="981" height="528">
+
+<section class="articles">
+    <h2 class="articles__heading">lastest Post</h2>
+    <ul class="article-ul">
+        <!-- okay so since we recieving data from main.js which is data from the data the foreach is for running through the data in the cluster -->
+        <% data.forEach(post => { %>
+            <li>
+                <a href="/post/<%= post._id %>">
+                    <span><%= post.title %></span>
+                    <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+                </a>
+            </li>
+        <% }) %>
+        
+    </ul>
+    <% if (nextPage !== null) { %>
+        <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
+
+    <% } %>
+
+</section>

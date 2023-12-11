@@ -1,0 +1,19 @@
+<div class="author">
+    <h1 class="author__heading">Search Results</h1>
+
+</div>
+
+<section class="articles">
+    <ul class="article-ul">
+        <!-- okay so since we recieving data from main.js which is data from the data the foreach is for running through the data in the cluster -->
+        <% data.forEach(post => { %>
+            <li>
+                <a href="/post/<%= post._id %>">
+                    <span><%= post.title %></span>
+                    <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+                </a>
+            </li>
+        <% }) %>
+        
+    </ul>
+</section>
