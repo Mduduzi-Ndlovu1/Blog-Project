@@ -5,6 +5,10 @@
     "routes": [
       { "handle": "filesystem" },
       { "src": "/.*", "dest": "app.js" }
-    ]
+    ],
+    "functions": {
+        "api/app": {
+          "maxDuration": 60
+        }
   }
   
